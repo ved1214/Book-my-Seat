@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+        
+        <title>Book My Seat | Home</title>
+    </head>
+    <body>
+        <div class="nav-container">
+            <div class="Logo">
+                <img src="Logo.png" alt="" style="height: 90px; border-radius: 15px;"> 
+            </div>
+            <div class="Nav">
+                <a href="http://127.0.0.1:5500/Booking.html" target="_blank"><h3>Book Seat</h3></a>
+                <a href="#"><h3>About Us</h3></a>
+                <a href="#"><h3>Contact Us</h3></a>
+            </div>
+            <div class="Nav-Right">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn">Search</button>
+                <button class="signup-btn" onclick="showSignupPopup()">Sign Up</button>
+            </div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="hideSignupPopup()">&times;</span>
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <input type="text" ="Username" required>
+                    <input type="password" placeholder="Password" required><br>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="social-login">
+                    <button onclick="loginWith('gmail')">Gmail</button>
+<button onclick="loginWith('facebook')">Facebook</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            background-color: #acdfca;
+            color: #765d69;
+            position: relative;
+            
+        }
+
+        .Logo {
+            font-size: 35px;
+            font-weight: 700;
+            margin-right: 30px;
+        }
+
+        .Nav {
+            display: flex;
+        }
+
+        .Nav a {
+            text-decoration: none;
+            color: #765d69;
+            font-size: 18px;
+            position: relative;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .Nav a::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 25px;
+            left: 50%;
+            background-color: #765d69;
+            transition: 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .Nav a:hover::before {
+            width: 40%;
+        }
+
+        .Nav a.active {
+            color: #ff6347;
+        }
+
+        .Nav-Right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+
+        .search-input {
+            padding: 7px;
+            border: 1px solid #765d69;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-btn {
+            padding: 7px 10px;
+            background-color: #765d69;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        
+        
+
+        .signup-btn {
+            padding: 7px 10px;
+            background-color: #acdfca;
+            color: #765d69;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .signup-btn:hover {
+            background-color: #765d69;
+            color: #acdfca;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 120px;
+        }
+
+        .modal-content {
+            background-color: #acdfca;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid black;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            border: black;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .social-login button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #765d69;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .social-login button:hover {
+            background-color: #765d69;
+            color:#acdfca;
+        }
+    </style>
+    <script>
+        function showSignupPopup() {
+            document.getElementById('signupModal').style.display = 'block';
+        }
+
+        function hideSignupPopup() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        function loginWith(provider) {
+            alert('Sign Up with ' + provider);
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('signupModal')) {
+                hideSignupPopup();
+            }
+        }
+    </script>
+</html>

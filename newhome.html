@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Ysabeau+SC:wght@300&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Taviraj&family=Ysabeau+SC:wght@300&display=swap" rel="stylesheet">
+        <title>Home  |  Book My Seat  </title>
+    </head>
+    
+    <body>
+        <div id="top">
+            <div id="top-content">
+                    <h1>Book My Seat</h1>
+                <div id="nav"> 
+                    <ul>
+                        <li><a href="http://127.0.0.1:5500/home.html" target="_blank">Book Seat</a></li>
+                        <li><a href="http://127.0.0.1:5500/events.html" target="_blank">About</a></li>
+                        <li><a href="http://127.0.0.1:5500/contact.html" target="_blank">Contact</a></li>
+                    </ul>
+                </div>
+                <button class="sign-up-button" id="signInButton"><b>Sign Up</b></button>
+
+                <!-- Hidden sign-in form -->
+                <div id="signInModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <!-- Your sign-in form content goes here -->
+                        <h2>Sign In</h2>
+                            <form id="signupForm">
+                                <input type="text" ="Username" required>
+                                <input type="password" placeholder="Password" required><br>
+                                    <div class="social-login">
+                                        <button onclick="loginWith('gmail')">Gmail</button>
+                                        <button onclick="loginWith('facebook')">Facebook</button>
+                                        <button type="submit">Sign Up</button>
+                                    </div>
+                            </form>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <hr>
+        <div class="serch-cont"></div>
+            <div class="serch">
+                <form id="searchForm">
+                    <select id="categorySelect">
+                        <option value="">Select Category</option>
+                        <option value="category1">College Events</option>
+                        <option value="category2">Live Seminars</option>
+                        <option value="category2">Movies</option>
+                        <option value="category2">Plays/Acts</option>
+                    </select>
+                    
+                    <select id="locationSelect">
+                        <option value="">Select Location </option>
+                        <option value="">search places by initials </option>
+                        <option value="location1"> Agra</option>
+                        <option value="location2">Ahmedabad</option>
+                        <option value="location3">Ajmer</option>
+                        <option value="location4">Amravati</option>
+                        <option value="location5">Amritsar</option>
+                        <option value="location6">Aurangabad</option>
+                        <option value="location7">Bengaluru</option>
+                        <option value="location8">Bhavnagar</option>
+                        <option value="location9">Bhiwandi</option>
+                        <option value="location10">Bhopal</option>
+                        <option value="location11">Bhubaneswar</option>
+                        <option value="location12">Chandigarh</option>
+                        <option value="location13">Chennai</option>
+                        <option value="location14">Coimbatore</option>
+                        <option value="location15">Delhi</option>
+                        <option value="location16">Faridabad</option>
+                        <option value="location17">Ghaziabad</option>
+                        <option value="location18">Gurugram</option>
+                        <option value="location19">Gwalior</option>
+                        <option value="location20">Hyderabad</option>
+                        <option value="location21">Indore</option>
+                        <option value="location22">Jaipur</option>
+                        <option value="location23">Jalgaon</option>
+                        <option value="location24">Jammu</option>
+                        <option value="location25">Jamshedpur</option>
+                        <option value="location26">Jodhpur</option>
+                        <option value="location27">Kanpur</option>
+                        <option value="location28">Karnal</option>
+                        <option value="location29">Kochi</option>
+                        <option value="location30">Kolhapur</option>
+                        <option value="location31">Kolkata</option>
+                        <option value="location32">Kollam</option>
+                        <option value="location33">Lucknow</option>
+                        <option value="location34">Mangaluru</option>
+                        <option value="location35">Meerut</option>
+                        <option value="location36">Mumbai</option>
+                        <option value="location37">Nagpur</option>
+                        <option value="location38">Nashik</option>
+                        <option value="location39">Noida</option>
+                        <option value="location40">Patna</option>
+                        <option value="location26">Pune</option>
+                        <option value="location26">Rajkot</option>
+
+                    </select>
+                    <button type="submit"><b>Search</b></button>
+                </form>
+            </div>
+        </div>        
+        <div id="searchResults">
+                <!-- Display search results here -->
+        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide slide1"> 
+                </div>
+                <div class="slide slide2"> 
+                </div>
+                <div class="slide slide3">
+                </div>
+                <!-- You can add more -->
+            </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+        </div>
+            <hr>
+        <div id="featured-events">
+            <h2><b>Featured Events</b></h2>
+            <div class="event-card" >
+                <img src="t1.avif" alt="Featured Event 1">
+                <h3>Event Name 1</h3>
+                
+                <button>Book Now</button>
+            </div>   
+            <div class="event-card">
+                <img src="et00363787-vvnpakrgls-portrait.avif" alt="Featured Event 2">
+                <h3>Event Name 2</h3>
+                <button>Book Now</button>
+            </div>
+            <div class="event-card">
+                <img src="et00348408-xtkepuuajr-portrait.avif" alt="Featured Event 2">
+                <h3>Event Name 3</h3>
+                <button>Book Now</button>
+            </div>
+            <div class="event-card">
+                <img src="sam.avif" alt="Featured Event 2">
+                <h3>Event Name 4</h3>
+                <button>Book Now</button>
+            </div>
+            <div class="event-card">
+                <img src="dunki.avif" alt="Featured Event 2">
+                <h3>Event Name 5</h3>
+                <button>Book Now</button>
+            </div>
+        </div>    
+        <!-- Add more featured event cards as needed -->
+    </div> 
+    <hr>
+    <div id="featured-events">
+            <h2><b>Sort by Categories</b></h2>
+            <div class="event-card" >
+                <img src="" alt="Featured Event 1">
+                <h3>Webinar</h3>
+                
+                <button>Open</button>
+            </div>   
+            <div class="event-card">
+                <img src="" alt="Featured Event 2">
+                <h3>Seminars</h3>
+                <button>Open</button>
+            </div>
+            <div class="event-card">
+                <img src="" alt="Featured Event 2">
+                <h3>Tech Events</h3>
+                <button>Open</button>
+            </div>
+            <div class="event-card">
+                <img src="" alt="Featured Event 2">
+                <h3>Physcial Activties</h3>
+                <button>Open</button>
+            </div>
+            <div class="event-card">
+                <img src="" alt="Featured Event 2">
+                <h3></h3>
+                <button>Open</button>
+            </div>
+        </div>    
+        <!-- Add more featured event cards as needed -->
+    </div>   
+    </body>
+
+    <style>
+        body 
+        {
+            background-color: #0e0325; /* Change the background color to #0e0325 */
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            background-size: 200% 200%;
+            color: #FEFAD4;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 22px;
+            color: #e492f5; /* Set text color to white for better contrast */
+        }
+        
+        #top
+        {
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            background-size: 200% 200%;
+            color: #FEFAD4;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            padding-left:10px;
+            border-radius: 9px;
+            color: #e492f5;
+            text-align: center;
+            height: 81px;
+            font-family: 'Josefin Slab', serif;
+            font-family: 'Ysabeau SC', sans-serif;
+        
+        }
+
+        #top-content 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            color: #FEFAD4;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding-left:10px;
+            border-radius: 9px;
+            text-align: center;
+            height: 81px;
+            font-size: 27px ;
+            font-family: 'Josefin Slab', serif;
+            font-family: 'Ysabeau SC', sans-serif;  
+        }
+        
+        #nav ul 
+        {
+            list-style: none;
+            margin-right: 170px;
+            display: flex;
+            
+        }
+
+        #nav ul li 
+        {
+            margin-right: 25px; /* It Adjusts spacing between navigation bar buttons */
+        }
+
+        #nav ul li a 
+        {
+            position: relative;
+            color: #FEFAD4;
+            text-decoration: none;
+        }
+
+        #nav ul li a::before 
+        {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #FEFAD4;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        #nav ul li a:hover::before 
+        {
+            width: 100%;
+            left: 0;
+        }
+
+        .sign-up-button 
+        {
+            cursor: pointer;
+            margin-right: 25px;
+            padding: 1px 5px;
+            text-decoration: none;
+            
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            background-size: 200% 200%;
+            color: #FEFAD4;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 9px;
+            position: relative; /* Needed for absolute positioning of the pseudo-element */
+            overflow: hidden; /* Hides the overflowing underline */
+            font-size: 25px;
+            font-family: 'Josefin Slab', serif;
+            font-family: 'Ysabeau SC', sans-serif;
+        }
+        
+        .sign-up-button::before 
+        {
+            
+            position: absolute;
+            bottom: 0;
+            left: 50%; 
+            width: 0;
+            height: 2px; 
+            transition: width 1s ease-in-out, left 1s ease-in-out;
+        }
+        
+        .modal 
+        {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(60, 60, 60, 0.5); 
+            backdrop-filter: blur(3.5px); /* Apply a blur effect */
+        }
+        
+        .modal-content 
+        {
+            background-color: #0e0325;
+            margin: 15% auto;
+            padding: 20px;
+            background-color: #0e0325;
+            border: 1px solid #ffffff;
+            border-radius: 9px;
+            width: 50%;
+        } 
+        
+        .close 
+       {
+                color: #fff;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+        }
+        
+        .close:hover,.close:focus
+        {
+            color: #FEFAD4;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /*css for category,location container*/
+        #categorySelect {
+            color: #FEFAD4;
+            background-color: #0e0325;
+            border: 1px solid #e492f5; /* Set border color to #e492f5 */
+            border-radius: 9px; /* Set border radius to 9px */
+        }
+
+        select 
+        {
+            margin-left: 5px; /* Adjust margin-left */
+            padding: 8px;
+            border: 1px solid #0e0325;
+            border-radius: 4px;
+            margin-right: 10px;
+            width: 200px;
+            cursor: pointer;
+            color: #e492f5;
+            background-color: #0e0325;
+            border: 1px solid #e492f5; /* Set border color to #e492f5 */
+            border-radius: 9px; /* Set border radius to 9px */
+        
+        }    
+
+        button 
+        {
+            padding: 9.5px 17.5px;
+            margin-left: 15px;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            background-color: #e492f5;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-family: 'Josefin Slab', serif;
+            font-family: 'Ysabeau SC', sans-serif;
+            cursor: pointer;
+        }
+
+        button:hover 
+        {
+            background-color: #0e0325;
+            color: #FEFAD4;
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #FEFAD4;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        #searchResults 
+        {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search 
+        {
+            background-color: #0e0325; /* Set background color to #0e0325 */
+            padding: 9px; /* Adjust padding to 9px */
+            width: 500px;
+        
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #fff; /* Set text color to #fff */
+        }
+
+        .slider-container 
+        {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Adjust as needed */
+            margin-top: 25px;
+            margin-left: 325px;
+            overflow: hidden;
+            background-color: transparent;
+            border-style: solid;
+        }
+        
+        .slider 
+        {
+            display: flex;
+        }
+        
+        .slide 
+        {
+            flex: 0 0 100%;
+            height: 350px;
+            width: 710px; /* Adjust slide height */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide1 
+        {
+            background-image: url('media-desktop-india-art-fair-2024-0-2023-11-2-t-7-11-37.avif'); /* URL of your slide images */
+        }
+        
+        .slide2
+        {
+            background-image: url('abhi.avif');
+        }
+        
+        .slide3 
+        {
+            background-image: url('media-desktop-zakir-khan-live-delhi-0-2024-1-16-t-5-57-9.avif');
+        }
+        
+        .event-card {
+            border: 1px solid #ddd;
+            height: 430px;
+            width: 222px;
+            border-radius: 5px;
+            margin: 10px;
+            margin-top: px;
+            padding: 10px;
+            text-align: center;
+            display: inline-block; /* Change display to inline-block */
+            vertical-align: top; /* Align the cards to the top */
+        }
+        
+        .event-card img {
+            border: 1px solid #ddd;
+            width: 200px;
+            height: 300px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        
+    
+        .event-card h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+    
+        .event-card p {
+            color: #666;
+        }
+    
+        .event-card button {
+            padding: 9.5px 17.5px;
+            margin-left: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #e492f5;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-family: 'Josefin Slab', serif;
+            font-family: 'Ysabeau SC', sans-serif;
+            cursor: pointer;
+        }
+        
+        .event-card button:hover {
+            background-color: #0e0325;
+            border: 0.8px solid #e492f5; /* Add border style and color */
+            color: #e492f5;
+        }
+    
+        #quick-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        #quick-links li {
+            margin-bottom: 10px;
+        }
+    
+        #quick-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+    
+        #quick-links a:hover {
+            color: #4CAF50;
+        }
+    </style>
+    <script>
+        // Get the sign-up button and the sign-in modal
+        const signUpButton = document.getElementById("signInButton");
+        const signInModal = document.getElementById("signInModal");
+
+        // When the user clicks the sign-up button, display the sign-in modal
+        signUpButton.onclick = function() {
+        signInModal.style.display = "block";
+        }
+
+        // When the user clicks on the close button or outside the modal, close the modal
+        window.onclick = function(event) {
+        if (event.target == signInModal) {
+            signInModal.style.display = "none";
+        }
+        }
+
+        // When the user clicks on the close button, close the modal
+        document.querySelector('.close').addEventListener('click', function() {
+        signInModal.style.display = 'none';
+        });
+
+
+        // When the user clicks on the close button or outside the modal, close the modal
+        window.onclick = function(event) {
+        if (event.target == signInModal) {
+            signInModal.style.display = "none";
+        }
+        }
+
+        // When the user clicks on the close button, close the modal
+        document.querySelector('.close').addEventListener('click', function() {
+        signInModal.style.display = 'none';
+        });
+
+        function showSignupPopup() {
+            document.getElementById('signupModal').style.display = 'block';
+        }
+
+        function hideSignupPopup() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        function loginWith(provider) {
+            alert('Sign Up with ' + provider);
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('signupModal')) {
+                hideSignupPopup();
+            }
+        }
+    </script>
+</html>

@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
         
-        <title>Book My Seat | Home</title>
+        <title>Home  |  Book My Seat  </title>
     </head>
     <body>
         <div class="nav-container">
@@ -16,7 +16,7 @@
                 <img src="Logo.png" alt="" style="height: 90px; border-radius: 15px;"> 
             </div>
             <div class="Nav">
-                <a href="http://127.0.0.1:5500/Booking.html" target="_blank"><h3>Book Seat</h3></a>
+                <a href="Booking.html" target="_blank"><h3>Book Seat</h3></a>
                 <a href="#"><h3>About Us</h3></a>
                 <a href="#"><h3>Contact Us</h3></a>
             </div>
@@ -39,7 +39,7 @@
                 </form>
                 <div class="social-login">
                     <button onclick="loginWith('gmail')">Gmail</button>
-<button onclick="loginWith('facebook')">Facebook</button>
+                    <button onclick="loginWith('facebook')">Facebook</button>
                 </div>
             </div>
         </div>
@@ -48,8 +48,12 @@
         body {
             padding: 0;
             margin: 0;
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            background-size:auto ;
+            color: #FEFAD4;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             font-family: "Space Grotesk", sans-serif;
-            background-color: #f4f4f9;
         }
 
         .nav-container {
@@ -57,10 +61,24 @@
             justify-content: space-between;
             align-items: center;
             padding: 5px 20px;
-            background-color: #acdfca;
-            color: #765d69;
+            border-radius: 0px;
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            background-size: 200% 200%;
+            color: #FEFAD4;
             position: relative;
-            
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes wateryEffect {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .Logo {
@@ -71,15 +89,17 @@
 
         .Nav {
             display: flex;
+
         }
 
         .Nav a {
             text-decoration: none;
-            color: #765d69;
-            font-size: 18px;
+            color: #FEFAD4;
+            font-size: 22px;
             position: relative;
             padding: 10px;
-            transition: color 0.3s;
+            transition: color 1.3s;
+            
         }
 
         .Nav a::before {
@@ -87,9 +107,10 @@
             position: absolute;
             width: 0;
             height: 2px;
+            border-radius: 20px;
             bottom: 25px;
             left: 50%;
-            background-color: #765d69;
+            background-color: #FEFAD4;
             transition: 0.3s;
             transform: translateX(-50%);
         }
@@ -112,38 +133,48 @@
 
         .search-input {
             padding: 7px;
-            border: 1px solid #765d69;
+            border: 1px solid #FEFAD4;
             border-radius: 5px;
-            outline: none;
-            font-size: 16px;
+            background: linear-gradient(120deg, #344E5C, #4E7B8A, #344E5C);
+            background-size: 200% 200%;
+            color: #FEFAD4;
+            position: relative;
+            font-family: "Space Grotesk", sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .search-btn {
             padding: 7px 10px;
-            background-color: #765d69;
-            color: white;
+            background-color: #344E5C;
+            color: #FEFAD4;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
+            font-family: "Space Grotesk", sans-serif;
         }
 
-        
-        
+        .search-btn:hover {
+            background-color: #FEFAD4;
+            color: #344E5C;
+            transition: 0.4s;
+        }
 
         .signup-btn {
             padding: 7px 10px;
-            background-color: #acdfca;
-            color: #765d69;
+            background-color: #344E5C;
+            color: #FEFAD4;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
+            font-family: "Space Grotesk", sans-serif;
         }
 
         .signup-btn:hover {
-            background-color: #765d69;
-            color: #acdfca;
+            background-color: #FEFAD4;
+            color: #344E5C;
+            transition: 0.4s;
         }
 
         /* Modal styles */
@@ -156,8 +187,8 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
             padding-top: 120px;
         }
 
@@ -199,8 +230,10 @@
 
         .social-login button:hover {
             background-color: #765d69;
-            color:#acdfca;
+            color: #acdfca;
         }
+
+
     </style>
     <script>
         function showSignupPopup() {

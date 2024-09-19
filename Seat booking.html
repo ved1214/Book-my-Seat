@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Seat Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="theme-toggle">Switch Day/Night</button>
+  <div class="container">
+    <h1>Book Your Movie Seats</h1>
+    <div class="screen"> Screen</div>
+
+    <div class="seats-container">
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat booked"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat booked"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <!-- Repeat rows for more seats -->
+    </div>
+
+    <p class="text">You have selected <span id="count">0</span> seats for a total price of ₹ <span id="total">0</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+<style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    color: white;
+        background-color: #282828;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.screen {
+  background-color: #666;
+  height: 50px;
+  padding-top: 15px;
+  margin: 20px 10px;
+  border-radius: 15px;
+}
+
+.seats-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.seat {
+  background-color: #fff;
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  border-color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.seat:hover {
+  background-color: #666;
+}
+
+.seat.selected {
+  background-color: #0dff00;
+}
+
+.seat.booked {
+  background-color: #ff0000;
+  cursor: not-allowed;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .seat {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.dark {
+      color: #fff;
+      background-color: #282828;
+    }
+
+    /* Light theme */
+    .light {
+      color: #000;
+      background-color: #f8f8f8;
+    }
+</style>
+<script>
+  const container = document.querySelector('.seats-container');
+const seats = document.querySelectorAll('.row .seat:not(.booked)');
+const count = document.getElementById('count');
+const total = document.getElementById('total');
+
+const ticketPrice = 150;  // Price per ticket
+
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('seat') && !e.target.classList.contains('booked')) {
+    e.target.classList.toggle('selected');
+    updateSelectedCount();
+  }
+});
+
+function updateSelectedCount() {
+  const selectedSeats = document.querySelectorAll('.row .seat.selected');
+  const selectedSeatsCount = selectedSeats.length;
+
+  count.innerText = selectedSeatsCount;
+  total.innerText = selectedSeatsCount * ticketPrice;
+}
+const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      body.classList.toggle("light");
+    });
+</script>
+</html>
